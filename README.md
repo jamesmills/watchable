@@ -1,12 +1,13 @@
-#Laravel Watchable
+# Laravel Watchable 
 
 Enable users to watch various models in your application.
  - Designed to work with Laravel Eloquent models
  - Just add the trait to the model you would like to be watchable
  - Watches are unique for one model and one user
  - Events are fired on `watched` and `unwatched` methods
+ - Built to work with Laravel Notifications
 
-## Installation (Laravel <= 5.4)
+## Installation
 
 Pull in the package using Composer
 
@@ -97,4 +98,4 @@ public function pause(Order $order)
 
 ## License
 
-Laravel Watchable package is open-sourced software licensed under the [MIT license](LICENSE).
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
