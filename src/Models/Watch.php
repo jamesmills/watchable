@@ -4,6 +4,8 @@ namespace JamesMills\Watchable\Models;
 
 use App\User;
 use Illuminate\Database\Eloquent\Model;
+use JamesMills\Watchable\Events\ModelWasUnWatched;
+use JamesMills\Watchable\Events\ModelWasWatched;
 
 class Watch extends Model
 {
@@ -17,6 +19,16 @@ class Watch extends Model
      */
     protected $fillable = [
         'user_id',
+    ];
+
+    /**
+     * The event map for the model.
+     *
+     * @var array
+     */
+    protected $events = [
+        'saved' => ModelWasWatched::class,
+        'deleted' => ModelWasUnWatched::class,
     ];
 
     /**

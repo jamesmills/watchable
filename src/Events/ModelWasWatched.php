@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace JamesMills\Watchable\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
