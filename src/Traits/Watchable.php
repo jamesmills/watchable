@@ -7,13 +7,20 @@ use JamesMills\Watchable\Models\Watch;
 trait Watchable
 {
     /**
-     * Get all of the model watchers.
+     * Get a collection of watchers
+     *
+     * @return mixed
      */
     public function watchers()
     {
         return $this->morphMany(Watch::class, 'watchable');
     }
 
+    /**
+     * Get a collection of user models who watch the igven model
+     *
+     * @return mixed
+     */
     public function collectWatchers()
     {
         $watchers = $this->watchers()
@@ -23,6 +30,9 @@ trait Watchable
         return $watchers->pluck('user');
     }
 
+    /**
+     * Set the current user as a watcher
+     */
     public function watch()
     {
         $watch = $this->watchers()->firstOrNew([
@@ -32,6 +42,9 @@ trait Watchable
         $watch->save();
     }
 
+    /**
+     * Unwatch the given model for the current user
+     */
     public function unwatch()
     {
         $watch = $this->watchers()
@@ -43,6 +56,9 @@ trait Watchable
         }
     }
 
+    /**
+     * Toggle the watch state of a user to the model
+     */
     public function toggleWatch()
     {
         if ($this->isWatched()) {
@@ -52,6 +68,11 @@ trait Watchable
         }
     }
 
+    /**
+     * Check if a user is watching a model
+     *
+     * @return bool
+     */
     public function isWatched()
     {
         return (bool)$this->watchers()
