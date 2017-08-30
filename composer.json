@@ -1,0 +1,35 @@
+{
+    "name": "jamesmills/watchable",
+    "description": "A package to allow your Models to become watchable by a User",
+    "homepage": "https://github.com/jamesmills/watchable",
+    "keywords":
+    [
+        "like",
+        "watch",
+        "watchable",
+        "laravel"
+    ],
+    "authors": [
+        {
+            "name": "James Mills",
+            "email": "james@jamesmills.co.uk"
+        }
+    ],
+    "require": {
+        "php" : "^7.0",
+        "illuminate/support": "~5.3.0|~5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JamesMills\\Watchable\\": "src"
+        }
+    },
+    "license": "MIT",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JamesMills\\Watchable\\WatchableServiceProvider"
+            ]
+        }
+    }
+}
