@@ -1,12 +1,18 @@
 #Laravel Watchable
 
-Enable users to watch various models in your applications
+Enable users to watch various models in your application.
+ - Designed to work with Laravel Eloquent models
+ - Just add the trait to the model you would like to be watchable
+ - Watches are unique for one model and one user
+ - Events are fired on `watched` and `unwatched` methods
 
-#### Composer Install
+## Installation (Laravel <= 5.4)
 
-	composer require jamesmills/watchable
+Pull in the package using Composer
 
-#### Install and then run the migrations
+    composer require jamesmills/watchable
+
+Include the service provider within `app/config/app.php`.
 
 ```php
 'providers' => [
@@ -15,15 +21,80 @@ Enable users to watch various models in your applications
 ],
 ```
 
+Publish and run the database migrations
+
 ```bash
 php artisan vendor:publish --provider="JamesMills\Watchable\WatchableServiceProvider" --tag="migrations"
 php artisan migrate
 ```
 
-#### Sample Usage
+## Sample Usage
+
+### Prepare your model to be watched
+
+Simply add the `watchable` trait to your model
 
 ```php
-// Find an article and watch it
-$article = Article::first();
-$article->watch(); 
+use Illuminate\Database\Eloquent\Model;
+use JamesMills\Watchable\Traits\Watchable;
+
+class Book extends Model {
+    use Watchable;
+} 
 ```
+
+### Available methods
+
+Watch a model
+
+```php
+$book = Book::first();
+$book->watch(); 
+```
+
+Unwatch a model
+
+```php
+$book = Book::first();
+$book->unwatch(); 
+```
+
+Toggle the watching of a model
+
+```php
+$book = Book::first();
+$book->toggleWatch(); 
+```
+
+Find out if the current user is watching the model
+
+```php
+@if ($book->isWatched())
+    {{ You are watching this book }}
+@else
+    {{ You are NOT watching this book }}
+@endif
+```
+
+Get a collection of the user who are watching a model
+
+```php
+$book = Book::first();
+$book->collectWatchers(); 
+```
+
+### Use with Notifications
+
+One of the main reasons I built this package was to scratch my own itch with an application I am building. I wanted to be able to send notifications to user who were watching a given model and I also wanted to allow users to be able to watch a number of different models.
+
+```php
+public function pause(Order $order)
+{
+    $this->performAction('paused', $order);
+    Notification::send($order->collectWatchers(), new OrderPaused($order));
+}
+```
+
+## License
+
+Laravel Watchable package is open-sourced software licensed under the [MIT license](LICENSE).
