@@ -7,7 +7,7 @@ use JamesMills\Watchable\Models\Watch;
 trait Watchable
 {
     /**
-     * Get a collection of watchers
+     * Get a collection of watchers.
      *
      * @return mixed
      */
@@ -17,7 +17,7 @@ trait Watchable
     }
 
     /**
-     * Get a collection of user models who watch the igven model
+     * Get a collection of user models who watch the igven model.
      *
      * @return mixed
      */
@@ -31,19 +31,19 @@ trait Watchable
     }
 
     /**
-     * Set the current user as a watcher
+     * Set the current user as a watcher.
      */
     public function watch()
     {
         $watch = $this->watchers()->firstOrNew([
-            'user_id' => auth()->id()
+            'user_id' => auth()->id(),
         ]);
 
         $watch->save();
     }
 
     /**
-     * Unwatch the given model for the current user
+     * Unwatch the given model for the current user.
      */
     public function unwatch()
     {
@@ -57,7 +57,7 @@ trait Watchable
     }
 
     /**
-     * Toggle the watch state of a user to the model
+     * Toggle the watch state of a user to the model.
      */
     public function toggleWatch()
     {
@@ -69,13 +69,13 @@ trait Watchable
     }
 
     /**
-     * Check if a user is watching a model
+     * Check if a user is watching a model.
      *
      * @return bool
      */
     public function isWatched()
     {
-        return (bool)$this->watchers()
+        return (bool) $this->watchers()
             ->where('user_id', '=', auth()->id())
             ->count();
     }

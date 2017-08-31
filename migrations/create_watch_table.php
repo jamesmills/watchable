@@ -8,8 +8,6 @@ class CreateWatchTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up()
     {
@@ -22,14 +20,11 @@ class CreateWatchTable extends Migration
             $table->unique(['watchable_id', 'watchable_type', 'user_id'], 'watch_user_unique');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down()
     {
