@@ -4,10 +4,15 @@
     "homepage": "https://github.com/jamesmills/watchable",
     "keywords":
     [
-        "like",
         "watch",
         "watchable",
-        "laravel"
+        "laravel",
+        "laravel-5-package",
+        "package",
+        "php7",
+        "eloquent",
+        "like",
+        "likeable"
     ],
     "authors": [
         {
