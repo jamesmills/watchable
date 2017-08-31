@@ -11,7 +11,7 @@ class WatchableServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (!class_exists('CreateWatchTable')) {
+        if (!class_exists(\CreateWatchTable::class)) {
             $timestamp = date('Y_m_d_His');
 
             $this->publishes([
