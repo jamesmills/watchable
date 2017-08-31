@@ -4,8 +4,8 @@ namespace JamesMills\Watchable\Models;
 
 use App\User;
 use Illuminate\Database\Eloquent\Model;
-use JamesMills\Watchable\Events\ModelWasUnWatched;
 use JamesMills\Watchable\Events\ModelWasWatched;
+use JamesMills\Watchable\Events\ModelWasUnWatched;
 
 class Watch extends Model
 {
