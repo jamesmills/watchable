@@ -9,7 +9,6 @@ use JamesMills\Watchable\Events\ModelWasWatched;
 
 class Watch extends Model
 {
-
     protected $table = 'watch';
 
     /**
