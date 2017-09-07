@@ -26,7 +26,7 @@ class Watch extends Model
      * @var array
      */
     protected $events = [
-        'saved'   => ModelWasWatched::class,
+        'saved' => ModelWasWatched::class,
         'deleted' => ModelWasUnWatched::class,
     ];
 
