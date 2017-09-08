@@ -2,6 +2,7 @@
 
 namespace JamesMills\Watchable;
 
+use CreateWatchTable;
 use Illuminate\Support\ServiceProvider;
 
 class WatchableServiceProvider extends ServiceProvider
@@ -11,11 +12,11 @@ class WatchableServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (! class_exists(\CreateWatchTable::class)) {
+        if (!class_exists(CreateWatchTable::class)) {
             $timestamp = date('Y_m_d_His');
 
             $this->publishes([
-                __DIR__.'/../migrations/create_watch_table.php' => database_path("/migrations/{$timestamp}_create_watch_table.php"),
+                __DIR__ . '/../migrations/create_watch_table.php' => database_path("/migrations/{$timestamp}_create_watch_table.php"),
             ], 'migrations');
         }
     }
