@@ -1,1 +1,10 @@
-make test
+language: php
+php:
+- 7.0
+- 7.1
+install:
+- composer install --no-interaction
+before_script:
+- php -v
+script:
+- make test
