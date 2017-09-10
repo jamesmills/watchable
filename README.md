@@ -2,8 +2,7 @@
 
 [![Packagist](https://img.shields.io/packagist/v/jamesmills/watchable.svg?style=flat-square)](https://packagist.org/packages/jamesmills/watchable)
 [![Packagist](https://img.shields.io/packagist/l/jamesmills/watchable.svg?style=flat-square)]()
-[![StyleCI](https://styleci.io/repos/101925074/shield?branch=master)](https://styleci.io/repos/101925074)
-
+[![Travis](https://img.shields.io/travis/jamesmills/watchable.svg?style=flat-square)](https://travis-ci.org/jamesmills/watchable)
 
 Enable users to watch various models in your application.
  - Designed to work with Laravel Eloquent models
