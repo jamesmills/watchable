@@ -17,7 +17,7 @@ trait Watchable
     }
 
     /**
-     * Get a collection of user models who watch the igven model.
+     * Get a collection of user models who watch the given model.
      *
      * @return mixed
      */
