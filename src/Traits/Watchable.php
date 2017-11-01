@@ -33,12 +33,12 @@ trait Watchable
     /**
      * Set the user as a watcher.
      *
-     * @param null|int $userId
+     * @param null|int $user_id
      */
-    public function watch($userId = null)
+    public function watch($user_id = null)
     {
         $watch = $this->watchers()->firstOrNew([
-            'user_id' => $userId ?? auth()->id(),
+            'user_id' => $user_id ?? auth()->id(),
         ]);
 
         $watch->save();
@@ -47,12 +47,12 @@ trait Watchable
     /**
      * Unwatch the given model for the user.
      *
-     * @param null|int $userId
+     * @param null|int $user_id
      */
-    public function unwatch($userId = null)
+    public function unwatch($user_id = null)
     {
         $watch = $this->watchers()
-            ->where('user_id', '=', $userId ?? auth()->id())
+            ->where('user_id', '=', $user_id ?? auth()->id())
             ->first();
 
         if ($watch) {
@@ -63,27 +63,27 @@ trait Watchable
     /**
      * Toggle the watch state of a user to the model.
      *
-     * @param null|int $userId
+     * @param null|int $user_id
      */
-    public function toggleWatch($userId = null)
+    public function toggleWatch($user_id = null)
     {
-        if ($this->isWatched($userId)) {
-            $this->unwatch($userId);
+        if ($this->isWatched($user_id)) {
+            $this->unwatch($user_id);
         } else {
-            $this->watch($userId);
+            $this->watch($user_id);
         }
     }
 
     /**
      * Check if a user is watching a model.
      *
-     * @param null|int $userId
+     * @param null|int $user_id
      * @return bool
      */
-    public function isWatched($userId = null)
+    public function isWatched($user_id = null)
     {
         return (bool) $this->watchers()
-            ->where('user_id', '=', $userId ?? auth()->id())
+            ->where('user_id', '=', $user_id ?? auth()->id())
             ->count();
     }
 }
