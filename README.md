@@ -65,13 +65,6 @@ $book = Book::first();
 $book->watch();  
 ```
 
-You can optionally send the $user_id if you don't want to use the built in ```auth()->user()->id``` functionality.
-
-```php
-$book = Book::first();
-$book->watch($user_id);  
-```
-
 Unwatch a model
 
 ```php
@@ -84,6 +77,15 @@ Toggle the watching of a model
 ```php
 $book = Book::first();
 $book->toggleWatch(); 
+```
+
+You can optionally send the ```$user_id``` if you don't want to use the built in ```auth()->user()->id``` functionality.
+
+```php
+$book = Book::first();
+$book->watch($user_id);
+$book->unwatch($user_id); 
+$book->toggleWatch($user_id); 
 ```
 
 Find out if the current user is watching the model
