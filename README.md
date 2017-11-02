@@ -62,7 +62,14 @@ Watch a model
 
 ```php
 $book = Book::first();
-$book->watch(); 
+$book->watch();  
+```
+
+You can optionally send the $user_id if you don't want to use the built in ```auth()->user()->id``` functionality.
+
+```php
+$book = Book::first();
+$book->watch($user_id);  
 ```
 
 Unwatch a model
