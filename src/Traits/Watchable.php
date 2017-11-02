@@ -17,7 +17,7 @@ trait Watchable
     }
 
     /**
-     * Get a collection of user models who watch the igven model.
+     * Get a collection of user models who watch the given model.
      *
      * @return mixed
      */
@@ -31,24 +31,28 @@ trait Watchable
     }
 
     /**
-     * Set the current user as a watcher.
+     * Set the user as a watcher.
+     *
+     * @param null|int $user_id
      */
-    public function watch()
+    public function watch($user_id = null)
     {
         $watch = $this->watchers()->firstOrNew([
-            'user_id' => auth()->id(),
+            'user_id' => $user_id ?? auth()->id(),
         ]);
 
         $watch->save();
     }
 
     /**
-     * Unwatch the given model for the current user.
+     * Unwatch the given model for the user.
+     *
+     * @param null|int $user_id
      */
-    public function unwatch()
+    public function unwatch($user_id = null)
     {
         $watch = $this->watchers()
-            ->where('user_id', '=', auth()->id())
+            ->where('user_id', '=', $user_id ?? auth()->id())
             ->first();
 
         if ($watch) {
@@ -58,25 +62,28 @@ trait Watchable
 
     /**
      * Toggle the watch state of a user to the model.
+     *
+     * @param null|int $user_id
      */
-    public function toggleWatch()
+    public function toggleWatch($user_id = null)
     {
-        if ($this->isWatched()) {
-            $this->unwatch();
+        if ($this->isWatched($user_id)) {
+            $this->unwatch($user_id);
         } else {
-            $this->watch();
+            $this->watch($user_id);
         }
     }
 
     /**
      * Check if a user is watching a model.
      *
+     * @param null|int $user_id
      * @return bool
      */
-    public function isWatched()
+    public function isWatched($user_id = null)
     {
         return (bool) $this->watchers()
-            ->where('user_id', '=', auth()->id())
+            ->where('user_id', '=', $user_id ?? auth()->id())
             ->count();
     }
 }
