@@ -35,7 +35,13 @@ php artisan vendor:publish --provider="JamesMills\Watchable\WatchableServiceProv
 php artisan migrate
 ```
 
-## Sample Usage
+## Sample Usage and Boilerplate
+
+I wrote a blog post to give you some boilerplate code that you can use in your application to wrap around the Laravel Watchable package. 
+
+https://blog.jamesmills.co.uk/2017/10/22/laravel-watchable-package
+
+## How to use
 
 ### Prepare your model to be watched
 
