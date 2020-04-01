@@ -1,8 +1,9 @@
 # Laravel Watchable
 
-[![Packagist](https://img.shields.io/packagist/v/jamesmills/watchable.svg?style=flat-square)](https://packagist.org/packages/jamesmills/watchable)
+![Packagist](https://img.shields.io/packagist/l/jamesmills/watchable.svg?style=flat-square)
 [![Travis](https://img.shields.io/travis/jamesmills/watchable.svg?style=flat-square)](https://travis-ci.org/jamesmills/watchable)
-[![Buy us a tree](https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-lightgreen?style=for-the-badge)](https://offset.earth/treeware?gift-trees)
+[![Buy us a tree](https://img.shields.io/badge/treeware-%F0%9F%8C%B3-lightgreen?style=flat-square)](https://plant.treeware.earth/jamesmills/watchable)
+[![Treeware (Trees)](https://img.shields.io/treeware/trees/jamesmills/watchable?style=flat-square)](https://plant.treeware.earth/jamesmills/watchable)
 
 Enable users to watch various models in your application.
  - Designed to work with Laravel Eloquent models
@@ -117,16 +118,8 @@ public function pause(Order $order)
 }
 ```
 
-## Treeware
-
-You're free to use this package, but if it makes it to your production environment you are required to buy the world a tree.
-
-It’s now common knowledge that one of the best tools to tackle the climate crisis and keep our temperatures from rising above 1.5C is to <a href="https://www.bbc.co.uk/news/science-environment-48870920">plant trees</a>. If you contribute to my forest you’ll be creating employment for local families and restoring wildlife habitats.
-
-You can buy trees at for my forest here [offset.earth/treeware](https://offset.earth/treeware?gift-trees)
-
-Read more about Treeware at [treeware.earth](http://treeware.earth?utm_referrer=github_licence_link)
-
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+This package is 100% free and open-source, under the [MIT license](LICENSE.md). Use it however you want.
+
+This package is [Treeware](https://treeware.earth). If you use it in production, then we ask that you [**buy the world a tree**](https://plant.treeware.earth/jamesmills/watchable) to thank us for our work. By contributing to the Treeware forest you’ll be creating employment for local families and restoring wildlife habitats.
