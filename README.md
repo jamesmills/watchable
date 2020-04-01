@@ -1,9 +1,11 @@
 # Laravel Watchable
 
-![Packagist](https://img.shields.io/packagist/l/jamesmills/watchable.svg?style=flat-square)
-[![Travis](https://img.shields.io/travis/jamesmills/watchable.svg?style=flat-square)](https://travis-ci.org/jamesmills/watchable)
-[![Buy us a tree](https://img.shields.io/badge/treeware-%F0%9F%8C%B3-lightgreen?style=flat-square)](https://plant.treeware.earth/jamesmills/watchable)
-[![Treeware (Trees)](https://img.shields.io/treeware/trees/jamesmills/watchable?style=flat-square)](https://plant.treeware.earth/jamesmills/watchable)
+[![Packagist](https://img.shields.io/packagist/v/jamesmills/watchable.svg?style=for-the-badge)](https://packagist.org/packages/jamesmills/watchable)
+![Packagist](https://img.shields.io/packagist/dt/jamesmills/watchable.svg?style=for-the-badge)
+[![Travis](https://img.shields.io/travis/jamesmills/watchable.svg?style=for-the-badge)](https://travis-ci.org/jamesmills/watchable)
+![Packagist](https://img.shields.io/packagist/l/jamesmills/watchable.svg?style=for-the-badge)
+[![Buy us a tree](https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-lightgreen?style=for-the-badge)](https://plant.treeware.earth/jamesmills/watchable)
+[![Treeware (Trees)](https://img.shields.io/treeware/trees/jamesmills/watchable?style=for-the-badge)](https://plant.treeware.earth/jamesmills/watchable)
 
 Enable users to watch various models in your application.
  - Designed to work with Laravel Eloquent models
