@@ -14,7 +14,7 @@ class CreateWatchTable extends Migration
         Schema::create('watch', function (Blueprint $table) {
             $table->increments('id');
             $table->morphs('watchable');
-            $table->integer('user_id')->unsigned()->index();
+            $table->bigInteger('user_id')->unsigned()->index();
             $table->timestamps();
 
             $table->unique(['watchable_id', 'watchable_type', 'user_id'], 'watch_user_unique');
